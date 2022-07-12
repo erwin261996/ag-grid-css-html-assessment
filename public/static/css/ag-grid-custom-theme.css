@@ -3,19 +3,73 @@ CUSTOM AG-GRID CSS HERE
 MORE DOCUMENTATION HERE : https://www.ag-grid.com/javascript-data-grid/themes/
 */
 .ag-theme-alpine {
-    --ag-header-height: 30px;
-    --ag-header-foreground-color: white;
-    --ag-header-background-color: black;
-    --ag-header-cell-hover-background-color: rgb(80, 40, 140);
-    --ag-header-cell-moving-background-color: rgb(80, 40, 140);
+  --ag-header-height: 30px;
+  --ag-header-foreground-color: white;
+  --ag-header-background-color: rgb(28, 91, 219);
+  --ag-header-cell-hover-background-color: rgb(80, 40, 140);
+  --ag-header-cell-moving-background-color: rgb(80, 40, 140);
+
+  --ag-header-column-separator-display: block;
+  --ag-header-column-separator-height: 100%;
+  --ag-header-column-separator-width: 2px;
+  --ag-header-column-separator-color: red;
+
+  --ag-header-column-resize-handle-display: block;
+  --ag-header-column-resize-handle-height: 25%;
+  --ag-header-column-resize-handle-width: 5px;
+  --ag-header-column-resize-handle-color: orange;
+
+  --ag-foreground-color: rgb(0, 2, 41);
+  --ag-background-color: rgb(249, 245, 227);
+
+  --ag-odd-row-background-color: rgba(50, 112, 235, 0.421);
+
+  --ag-font-size: 17px;
+  --ag-font-family: monospace;
+
+  /* disable all borders */
+  --ag-borders: none;
+  /* then add back a border between rows */
+  --ag-borders-row: dashed 1px;
+  --ag-row-border-color: rgb(150, 150, 200);
 }
 .ag-theme-alpine .ag-header {
-    font-family: cursive;
+  font-family: cursive;
 }
 .ag-theme-alpine .ag-header-group-cell {
-    font-weight: normal;
-    font-size: 22px;
+  font-family: monospace;
+  font-size: 22px;
+  font-weight: normal;
 }
 .ag-theme-alpine .ag-header-cell {
-    font-size: 18px;
+  font-family: monospace;
+  font-size: 18px;
+}
+
+.ag-react-container {
+  background-color: rgb(249, 245, 227);
+}
+
+.ag-theme-alpine .ag-column-drop-cell,
+.ag-theme-alpine .ag-column-drop-cell .ag-icon {
+  background-color: rgb(28, 91, 219);
+  color: white;
+}
+
+/* .ag-theme-alpine .ag-column-drop-cell */
+
+.ag-theme-alpine
+  .ag-row-group-contracted
+  .ag-cell-normal-height
+  .ag-cell-wrapper
+  .btn {
+  background-color: transparent;
+  border: none;
+}
+
+.ag-react-container h2 {
+  font-size: 1.6rem;
+  padding: 8px 10px 10px;
+  background-color: rgb(28, 91, 219);
+  color: white;
 }
