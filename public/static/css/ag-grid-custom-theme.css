@@ -2,12 +2,48 @@
 CUSTOM AG-GRID CSS HERE
 MORE DOCUMENTATION HERE : https://www.ag-grid.com/javascript-data-grid/themes/
 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+:root {
+  --primary-background: rgb(8, 92, 188);
+  --primary-background-hover: rgb(5, 68, 141);
+  --fontFamily: "Roboto", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 7px;
+}
+
+/* Track: Hover */
+/* ::-webkit-scrollbar-track:hover {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 7px;
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-background);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-background-hover);
+}
+
 .ag-theme-alpine {
   --ag-header-height: 30px;
-  --ag-header-foreground-color: white;
-  --ag-header-background-color: rgb(28, 91, 219);
-  --ag-header-cell-hover-background-color: rgb(80, 40, 140);
-  --ag-header-cell-moving-background-color: rgb(80, 40, 140);
+  --ag-header-foreground-color: black;
+  --ag-background-color: white;
+  --ag-header-background-color: #ededed;
 
   --ag-header-column-separator-display: block;
   --ag-header-column-separator-height: 100%;
@@ -20,40 +56,32 @@ MORE DOCUMENTATION HERE : https://www.ag-grid.com/javascript-data-grid/themes/
   --ag-header-column-resize-handle-color: orange;
 
   --ag-foreground-color: rgb(0, 2, 41);
-  --ag-background-color: rgb(249, 245, 227);
 
-  --ag-odd-row-background-color: rgba(50, 112, 235, 0.421);
+  --ag-odd-row-background-color: rgba(8, 92, 188, 0.18);
 
   --ag-font-size: 17px;
-  --ag-font-family: monospace;
-
-  /* disable all borders */
-  --ag-borders: none;
-  /* then add back a border between rows */
-  --ag-borders-row: dashed 1px;
-  --ag-row-border-color: rgb(150, 150, 200);
+  --ag-font-family: var(--fontFamily);
 }
 .ag-theme-alpine .ag-header {
   font-family: cursive;
 }
 .ag-theme-alpine .ag-header-group-cell {
-  font-family: monospace;
+  font-family: var(--fontFamily);
   font-size: 22px;
   font-weight: normal;
 }
 .ag-theme-alpine .ag-header-cell {
-  font-family: monospace;
+  font-family: var(--fontFamily);
   font-size: 18px;
 }
-
-.ag-react-container {
-  background-color: rgb(249, 245, 227);
+.ag-theme-alpine .ag-column-drop-wrapper div {
+  background-color: #ededed;
 }
 
 .ag-theme-alpine .ag-column-drop-cell,
 .ag-theme-alpine .ag-column-drop-cell .ag-icon {
-  background-color: rgb(28, 91, 219);
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 /* .ag-theme-alpine .ag-column-drop-cell */
@@ -67,9 +95,78 @@ MORE DOCUMENTATION HERE : https://www.ag-grid.com/javascript-data-grid/themes/
   border: none;
 }
 
+.ag-theme-alpine
+  .ag-row-group-contracted
+  .ag-cell-normal-height
+  .ag-cell-wrapper
+  .btn
+  > i,
+.ag-cell-wrapper i {
+  color: var(--primary-background);
+}
+
 .ag-react-container h2 {
+  box-shadow: 0px 0px 20px #919191;
+  background-color: #ededed;
+  color: black;
   font-size: 1.6rem;
   padding: 8px 10px 10px;
-  background-color: rgb(28, 91, 219);
+}
+
+.ag-theme-alpine .ag-ltr input[class^="ag-"]:not([type]),
+.ag-theme-alpine .ag-ltr input[class^="ag-"][type="date"],
+.ag-theme-alpine .ag-ltr input[class^="ag-"][type="datetime-local"],
+.ag-theme-alpine .ag-ltr input[class^="ag-"][type="number"],
+.ag-theme-alpine .ag-ltr input[class^="ag-"][type="tel"],
+.ag-theme-alpine .ag-ltr input[class^="ag-"][type="text"],
+.ag-theme-alpine .ag-ltr textarea[class^="ag-"] {
+  color: black;
+  border-radius: 8px;
+}
+
+.ag-status-bar .ag-status-name-value input[type="button"]:not(:disabled),
+.ag-status-bar .ag-status-name-value input[type="reset"]:not(:disabled),
+.ag-status-bar .ag-status-name-value input[type="submit"]:not(:disabled) {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(4, 68, 230);
+  box-shadow: 0px 0px 3px rgb(3, 36, 121);
+  color: #fff;
+}
+
+.ag-theme-alpine .ag-root-wrapper {
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px #acacac;
+  margin-top: 2rem;
+}
+
+.ag-theme-alpine .ag-tool-panel-wrapper {
+  width: auto !important;
+}
+
+.ag-theme-alpine .ag-tool-panel-wrapper .ag-react-container dl {
+  color: rgb(18, 18, 18);
+  text-align: left;
+  font-weight: 600;
+}
+
+.ag-theme-alpine .ag-tool-panel-wrapper .ag-react-container dl dt::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f374";
+  display: block;
+  height: 20px;
+  width: 20px;
+  float: left;
+  margin: 0 6px 0 0;
+  color: var(--primary-background);
+}
+
+/* .ag-column-drop-wrapper,
+.ag-status-bar {
+  background-color: rgb(2, 97, 138);
   color: white;
+} */
+.ag-status-bar .ag-status-bar-right .ag-react-container {
+  background-color: white;
+  color: black;
 }
